@@ -1,10 +1,13 @@
 package com.redeyesncode.jetpackcompose
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,6 +30,10 @@ class MainActivity : ComponentActivity() {
 fun loginScreen(){
     //REMEMBER THAT COMPOSABLE FUNTIONS CAN ONLY BE CALLED FROM INSIDE OTHER
     // COMPOSABLE FUNCTIONS IN ANDROID.
+
+    LoginScreenUI()
+
+
 }
 
 
@@ -71,6 +78,23 @@ fun messageCard(){
 
 
     }
+
+
+}
+@Preview
+@Composable
+fun emailEditText(){
+
+    TextField(value = "Enter your email here", onValueChange = {
+        if(it.isEmpty()){
+            Log.i(ContentValues.TAG, "emailEditText: Email Field is empty !")
+        }else{
+
+            Log.i(ContentValues.TAG, "emailEditText: Email is not Empty")
+        }
+
+    })
+
 
 
 }
