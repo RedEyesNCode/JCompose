@@ -9,11 +9,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Card
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -59,12 +57,32 @@ fun LoginScreenUI() {
                     .wrapContentWidth()
                     .wrapContentHeight())*/
                 textWhite30Size(name = "Back !")
-                SimpleTextField("Enter your Email Here !")
-                passwordEditText(hint = "Enter your password Here !")
+
+
+
+
 
             }
+
         }
     }
+    
+    Column(modifier = Modifier
+        .fillMaxWidth(1f)
+        .fillMaxHeight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+
+        SimpleTextField("Enter your Email Here !")
+        spacer10H15V()
+        passwordEditText(hint = "Enter your password Here !")
+        spacer10H15V()
+        Column(modifier = Modifier.fillMaxWidth(1f).padding(10.dp,10.dp),horizontalAlignment = Alignment.End) {
+            simpleTextAlignLeft(text = "Forgot password ? ")
+        }
+        spacer10H15V()
+        simpleButton(buttonText = "Login")
+
+    }
+
 }
 
 //YOU CAN ALSO MAKE A SINGLE COMPOSABLE FOR BOTH THE TEXT WHICH IS WELCOME , BACK AND
@@ -75,6 +93,14 @@ fun textWhite30Size(name:String){
     Text(text = name, fontSize = 30.sp, fontFamily = FontFamily(Font(R.font.roboto_bold, FontWeight.Bold)),color = Color.White, modifier = Modifier
         .wrapContentWidth()
         .wrapContentHeight())
+
+}
+@Composable
+fun simpleTextAlignLeft(text:String){
+    Text(text = text, fontSize = 15.sp, fontFamily = FontFamily(Font(R.font.roboto_bold,FontWeight.Bold)), color = Color.White, modifier = Modifier.wrapContentSize())
+    
+
+
 
 }
 
@@ -103,6 +129,21 @@ fun passwordEditText(hint :String){
         password= it
         //VISUAL TRANSFORMATION IS THE FIELD TO SET THE FIELD VALUE TO THE PASSWORD.
     }, visualTransformation = PasswordVisualTransformation(),label ={Text(text = hint)} ,keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.None, autoCorrect = false, keyboardType = KeyboardType.Email, imeAction = ImeAction.None))
+}
+
+@Composable
+fun simpleButton(buttonText:String){
+  Button(onClick = { Log.i(TAG, "simpleButton Composable: Clicked !")}, modifier = Modifier.padding(25.dp,10.dp)) {
+      Text(buttonText, modifier = Modifier.padding(20.dp,12.dp))
+  }
+    
+}
+@Composable
+fun spacer10H15V(){
+
+    Spacer(modifier = Modifier.padding(10.dp,15.dp))
+
+
 }
 
 
