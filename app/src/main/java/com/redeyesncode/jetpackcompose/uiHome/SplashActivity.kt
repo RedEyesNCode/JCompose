@@ -42,6 +42,4 @@ fun splashScreen(){
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
         Image(painter = painterResource(id = R.drawable.ic_jetpack), contentDescription = "Jetpack Compose")
     }
-
-
 }

@@ -92,6 +92,18 @@ fun textBlack30Size(name:String){
 
 }
 @Composable
+fun textBlack9dpSize(name :String){
+    Text(text = name, fontSize = 9.sp, fontFamily = FontFamily(Font(R.font.roboto_bold, FontWeight.Bold)),color = Color.Black, modifier = Modifier
+        .wrapContentWidth()
+        .wrapContentHeight())
+
+
+
+
+}
+
+
+@Composable
 fun simpleTextAlignLeft(text:String){
     Text(text = text, fontSize = 15.sp, fontFamily = FontFamily(Font(R.font.roboto_bold,FontWeight.Bold)), color = Color.Black, modifier = Modifier.wrapContentSize())
     
@@ -148,4 +160,8 @@ fun spacer10H15V(){
 }
 
 
+@Composable
+fun spacer10H10V(){
+    Spacer(modifier = Modifier.padding(10.dp,15.dp))
+}
 

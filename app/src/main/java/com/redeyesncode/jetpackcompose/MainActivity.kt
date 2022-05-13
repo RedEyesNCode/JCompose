@@ -31,8 +31,8 @@ fun loginScreen(){
     //REMEMBER THAT COMPOSABLE FUNTIONS CAN ONLY BE CALLED FROM INSIDE OTHER
     // COMPOSABLE FUNCTIONS IN ANDROID.
 
-    LoginScreenUI()
-
+//    LoginScreenUI()
+    LoginScreenSampleOne()
 
 }
 
