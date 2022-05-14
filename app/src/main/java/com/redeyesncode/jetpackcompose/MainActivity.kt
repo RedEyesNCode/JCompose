@@ -8,8 +8,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.redeyesncode.jetpackcompose.uiHome.LoginScreenUI
@@ -32,7 +33,7 @@ fun loginScreen(){
     // COMPOSABLE FUNCTIONS IN ANDROID.
 
 //    LoginScreenUI()
-    LoginScreenSampleOne()
+    LoginScreenSampleOne(context = LocalContext.current)
 
 }
 
@@ -84,15 +85,11 @@ fun messageCard(){
 @Preview
 @Composable
 fun emailEditText(){
-
-    TextField(value = "Enter your email here", onValueChange = {
-        if(it.isEmpty()){
-            Log.i(ContentValues.TAG, "emailEditText: Email Field is empty !")
-        }else{
-
-            Log.i(ContentValues.TAG, "emailEditText: Email is not Empty")
-        }
-
+    var password by remember {
+        mutableStateOf("")
+    }
+    TextField(value = password, onValueChange = {
+        password = it
     })
 
 

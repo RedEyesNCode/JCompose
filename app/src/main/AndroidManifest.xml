@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackCompose">
         <activity
+            android:name=".uiHome.DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
             android:name=".uiHome.SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.JetpackCompose" >
+            android:theme="@style/Theme.JetpackCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +33,7 @@
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/Theme.JetpackCompose">
-
-        </activity>
+            android:theme="@style/Theme.JetpackCompose"></activity>
     </application>
 
 </manifest>
