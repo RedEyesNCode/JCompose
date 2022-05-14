@@ -1,43 +1,23 @@
 package com.redeyesncode.jetpackcompose.uiHome
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.redeyesncode.jetpackcompose.uiHome.ui.theme.JetpackComposeTheme
+import androidx.compose.ui.platform.LocalContext
 
 class DashboardActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            JetpackComposeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            DASHBOARD_COMPOSE(context = LocalContext.current)
         }
     }
 }
-
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun DASHBOARD_COMPOSE(context: Context){
+    DASHBOARDUI()
+
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    JetpackComposeTheme {
-        Greeting("Android")
-    }
-}

@@ -162,6 +162,9 @@ fun spacer10H15V(){
 
 @Composable
 fun spacer10H10V(){
-    Spacer(modifier = Modifier.padding(10.dp,15.dp))
+    Spacer(modifier = Modifier.padding(10.dp,10.dp))
 }
-
+@Composable
+fun spacer5H5V(){
+    Spacer(modifier = Modifier.padding(5.dp,5.dp))
+}
